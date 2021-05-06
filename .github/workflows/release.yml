@@ -16,11 +16,6 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          
-      - name: Download Dependencies
-        run: go get -v -t -d ./...
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
