@@ -7,7 +7,7 @@ permissions:
 
 jobs:
   goreleaser:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:  
       - name: Install Go
         uses: actions/setup-go@v2
@@ -16,6 +16,8 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
           
       - name: Download Dependencies
         run: go get -v -t -d ./...
